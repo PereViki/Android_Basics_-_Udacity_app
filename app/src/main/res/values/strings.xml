@@ -1,3 +1,27 @@
 <resources>
-    <string name="app_name">Hello Android</string>
+    <string name="app_name">Udacity Info</string>
+    <string name="company_name">Udacity</string>
+    <string name="company_telephone">650-555-5555</string>
+    <string name="company_web">www.udacity.com</string>
+    <string name="company_address">2465 Latham St, Mountain View, CA 94043</string>
+    <string name="company_email">support@udacity.com</string>
+    <string name="content_bg">Udacity image</string>
+    <string name="content_logo">Udacity logo</string>
+    <string name="content_map">map icon</string>
+    <string name="content_mail">mail icon</string>
+    <string name="content_phone">phone icon</string>
+    <string name="content_web">web icon</string>
+    <string name="content_facebook">Facebook icon</string>
+    <string name="content_twitter">Twitter icon</string>
+    <string name="content_google">Google+ icon</string>
+    <string name="content_linkedin">LinkedIn icon</string>
+    <string name="content_instagram">Instagram icon</string>
+    <string name="company_lat">37.3999001</string>
+    <string name="company_long">-122.10840050000002</string>
+    <string name="company_facebook">https://www.facebook.com/Udacity</string>
+    <string name="company_twitter">https://twitter.com/udacity</string>
+    <string name="company_linkedin">https://www.linkedin.com/company/udacity</string>
+    <string name="company_instagram">https://www.instagram.com/udacity/</string>
+    <string name="company_google">https://plus.google.com/+Udacity/posts</string>
+
 </resources>
