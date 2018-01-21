@@ -1,221 +1,143 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:paddingBottom="50dp"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent">
 
-    <RelativeLayout
+    <ImageView
+        android:id="@+id/background_image"
         android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_marginBottom="36dp"
-        android:layout_marginTop="0dp"
-        android:layout_weight="18">
+        android:layout_height="250dp"
+        android:contentDescription="@string/content_bg"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bg" />
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:contentDescription="@string/content_bg"
-            android:scaleType="centerCrop"
-            android:src="@drawable/bg" />
-
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:contentDescription="@string/content_logo"
-            android:scaleType="center"
-            android:src="@drawable/udacity_logo" />
-
-    </RelativeLayout>
-
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="0dp"
-    android:layout_weight="15"
-    android:orientation="vertical"
-    >
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="110dp"
+        android:contentDescription="@string/content_logo"
+        android:scaleType="center"
+        android:src="@drawable/udacity_logo" />
 
     <TextView
+        android:id="@+id/company_name"
         android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_marginLeft="24dp"
-        android:layout_weight="2"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/background_image"
+        android:layout_marginBottom="12dp"
+        android:layout_marginLeft="48dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="36dp"
         android:text="@string/company_name"
         android:textColor="#333333"
         android:textSize="16sp"
         android:textStyle="bold" />
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_marginLeft="12dp"
-        android:layout_weight="2"
-        android:orientation="horizontal">
+    <ImageView
+        android:id="@+id/map_icon"
+        style="@style/iconStylePortrait"
+        android:layout_below="@id/company_name"
+        android:contentDescription="@string/content_map"
+        android:onClick="openMap"
+        android:src="@drawable/map" />
 
-        <ImageView
-            android:contentDescription="@string/content_map"
-            android:layout_width="48dp"
-            android:layout_height="wrap_content"
-            android:paddingLeft="12dp"
-            android:paddingRight="12dp"
-            android:scaleType="fitCenter"
-            android:src="@drawable/map"
-            android:onClick="openMap"/>
+    <TextView
+        android:id="@+id/company_address"
+        style="@style/textFieldStyle"
+        android:layout_below="@id/company_name"
+        android:layout_toEndOf="@id/map_icon"
+        android:layout_toRightOf="@id/map_icon"
+        android:text="@string/company_address" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingRight="24dp"
-            android:layout_gravity="center_vertical"
-            android:text="@string/company_address"
-            android:textColor="#9e9e9e"
-            android:textSize="14sp"
-            />
+    <ImageView
+        android:id="@+id/phone_icon"
+        style="@style/iconStylePortrait"
+        android:layout_below="@id/map_icon"
+        android:contentDescription="@string/content_phone"
+        android:onClick="openDialer"
+        android:src="@drawable/phone" />
 
-    </LinearLayout>
+    <TextView
+        android:id="@+id/company_phone"
+        style="@style/textFieldStyle"
+        android:layout_below="@id/map_icon"
+        android:layout_toEndOf="@id/phone_icon"
+        android:layout_toRightOf="@id/phone_icon"
+        android:text="@string/company_telephone" />
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_marginLeft="12dp"
-        android:layout_weight="2"
-        android:orientation="horizontal">
+    <ImageView
+        android:id="@+id/web_icon"
+        style="@style/iconStylePortrait"
+        android:layout_below="@id/phone_icon"
+        android:contentDescription="@string/content_web"
+        android:onClick="openBrowser"
+        android:src="@drawable/web" />
 
-        <ImageView
-            android:contentDescription="@string/content_phone"
-            android:layout_width="48dp"
-            android:layout_height="wrap_content"
-            android:paddingLeft="12dp"
-            android:paddingRight="12dp"
-            android:src="@drawable/phone"
-            android:onClick="openDialer"/>
+    <TextView
+        style="@style/textFieldStyle"
+        android:layout_below="@id/company_phone"
+        android:layout_toEndOf="@id/web_icon"
+        android:layout_toRightOf="@id/web_icon"
+        android:text="@string/company_web" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:text="@string/company_telephone"
-            android:textColor="#9e9e9e"
-            android:textSize="14sp" />
+    <ImageView
+        android:id="@+id/mail_icon"
+        style="@style/iconStylePortrait"
+        android:layout_below="@id/web_icon"
+        android:contentDescription="@string/content_mail"
+        android:onClick="openMail"
+        android:src="@drawable/mail" />
 
-    </LinearLayout>
+    <TextView
+        style="@style/textFieldStyle"
+        android:layout_below="@id/web_icon"
+        android:layout_toEndOf="@id/mail_icon"
+        android:layout_toRightOf="@id/mail_icon"
+        android:text="@string/company_email" />
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_marginLeft="12dp"
-        android:layout_weight="2"
-        android:orientation="horizontal">
+    <ImageView
+        android:id="@+id/facebook_icon"
+        style="@style/BottomIconStylePortrait"
+        android:layout_toLeftOf="@id/twitter_icon"
+        android:layout_toStartOf="@id/twitter_icon"
+        android:contentDescription="@string/content_facebook"
+        android:onClick="openFacebook"
+        android:src="@drawable/facebook" />
 
-        <ImageView
-            android:contentDescription="@string/content_web"
-            android:layout_width="48dp"
-            android:layout_height="wrap_content"
-            android:paddingLeft="12dp"
-            android:paddingRight="12dp"
-            android:src="@drawable/web"
-            android:onClick="openBrowser"/>
+    <ImageView
+        android:id="@+id/twitter_icon"
+        style="@style/BottomIconStylePortrait"
+        android:layout_toLeftOf="@id/linkedin_icon"
+        android:layout_toStartOf="@id/linkedin_icon"
+        android:contentDescription="@string/content_twitter"
+        android:onClick="openTwitter"
+        android:src="@drawable/twitter" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:text="@string/company_web"
-            android:textColor="#9e9e9e"
-            android:textSize="14sp" />
+    <ImageView
+        android:id="@+id/linkedin_icon"
+        style="@style/BottomIconStylePortrait"
+        android:layout_centerHorizontal="true"
+        android:contentDescription="@string/content_linkedin"
+        android:onClick="openLinkedIn"
+        android:src="@drawable/linkedin" />
 
-    </LinearLayout>
+    <ImageView
+        android:id="@+id/instagram_icon"
+        style="@style/BottomIconStylePortrait"
+        android:layout_toEndOf="@id/linkedin_icon"
+        android:layout_toRightOf="@id/linkedin_icon"
+        android:contentDescription="@string/content_instagram"
+        android:onClick="openInstagram"
+        android:src="@drawable/instagram" />
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_marginLeft="12dp"
-        android:layout_weight="2"
-        android:orientation="horizontal">
+    <ImageView
+        android:id="@+id/google_icon"
+        style="@style/BottomIconStylePortrait"
+        android:layout_toEndOf="@id/instagram_icon"
+        android:layout_toRightOf="@id/instagram_icon"
+        android:contentDescription="@string/content_google"
+        android:onClick="openGoogle"
+        android:src="@drawable/google" />
 
-        <ImageView
-            android:contentDescription="@string/content_mail"
-            android:layout_width="48dp"
-            android:layout_height="wrap_content"
-            android:paddingLeft="12dp"
-            android:paddingRight="12dp"
-            android:src="@drawable/mail"
-            android:onClick="openMail"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:text="@string/company_email"
-            android:textColor="#9e9e9e"
-            android:textSize="14sp" />
-
-    </LinearLayout>
-
-</LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:layout_weight="1"
-        android:gravity="center_horizontal"
-        android:orientation="horizontal">
-
-        <ImageView
-            android:contentDescription="@string/content_facebook"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_marginLeft="4dp"
-            android:layout_marginRight="4dp"
-            android:padding="12dp"
-            android:src="@drawable/facebook"
-            android:onClick="openFacebook"/>
-
-        <ImageView
-            android:contentDescription="@string/content_twitter"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_marginLeft="4dp"
-            android:layout_marginRight="4dp"
-            android:padding="12dp"
-            android:src="@drawable/twitter"
-            android:onClick="openTwitter"/>
-
-        <ImageView
-            android:contentDescription="@string/content_linkedin"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_marginLeft="4dp"
-            android:layout_marginRight="4dp"
-            android:padding="12dp"
-            android:src="@drawable/linkedin"
-            android:onClick="openLinkedIn"/>
-
-        <ImageView
-            android:contentDescription="@string/content_instagram"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_marginLeft="4dp"
-            android:layout_marginRight="4dp"
-            android:padding="12dp"
-            android:src="@drawable/instagram"
-            android:onClick="openInstagram"/>
-
-        <ImageView
-            android:contentDescription="@string/content_google"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_marginLeft="4dp"
-            android:layout_marginRight="4dp"
-            android:padding="12dp"
-            android:src="@drawable/google"
-            android:onClick="openGoogle"/>
-
-    </LinearLayout>
-
-</LinearLayout>
-
+</RelativeLayout>
