@@ -39,7 +39,7 @@
         style="@style/iconStylePortrait"
         android:layout_below="@id/company_name"
         android:contentDescription="@string/content_map"
-        android:onClick="openMap"
+        android:onClick="onClick"
         android:src="@drawable/map" />
 
     <TextView
@@ -48,6 +48,7 @@
         android:layout_below="@id/company_name"
         android:layout_toEndOf="@id/map_icon"
         android:layout_toRightOf="@id/map_icon"
+        android:onClick="onClick"
         android:text="@string/company_address" />
 
     <ImageView
@@ -55,7 +56,7 @@
         style="@style/iconStylePortrait"
         android:layout_below="@id/map_icon"
         android:contentDescription="@string/content_phone"
-        android:onClick="openDialer"
+        android:onClick="onClick"
         android:src="@drawable/phone" />
 
     <TextView
@@ -64,6 +65,7 @@
         android:layout_below="@id/map_icon"
         android:layout_toEndOf="@id/phone_icon"
         android:layout_toRightOf="@id/phone_icon"
+        android:onClick="onClick"
         android:text="@string/company_telephone" />
 
     <ImageView
@@ -71,14 +73,16 @@
         style="@style/iconStylePortrait"
         android:layout_below="@id/phone_icon"
         android:contentDescription="@string/content_web"
-        android:onClick="openBrowser"
+        android:onClick="onClick"
         android:src="@drawable/web" />
 
     <TextView
+        android:id="@+id/company_web"
         style="@style/textFieldStyle"
         android:layout_below="@id/company_phone"
         android:layout_toEndOf="@id/web_icon"
         android:layout_toRightOf="@id/web_icon"
+        android:onClick="onClick"
         android:text="@string/company_web" />
 
     <ImageView
@@ -86,14 +90,16 @@
         style="@style/iconStylePortrait"
         android:layout_below="@id/web_icon"
         android:contentDescription="@string/content_mail"
-        android:onClick="openMail"
+        android:onClick="onClick"
         android:src="@drawable/mail" />
 
     <TextView
+        android:id="@+id/company_email"
         style="@style/textFieldStyle"
         android:layout_below="@id/web_icon"
         android:layout_toEndOf="@id/mail_icon"
         android:layout_toRightOf="@id/mail_icon"
+        android:onClick="onClick"
         android:text="@string/company_email" />
 
     <ImageView
@@ -102,7 +108,7 @@
         android:layout_toLeftOf="@id/twitter_icon"
         android:layout_toStartOf="@id/twitter_icon"
         android:contentDescription="@string/content_facebook"
-        android:onClick="openFacebook"
+        android:onClick="onClick"
         android:src="@drawable/facebook" />
 
     <ImageView
@@ -111,7 +117,7 @@
         android:layout_toLeftOf="@id/linkedin_icon"
         android:layout_toStartOf="@id/linkedin_icon"
         android:contentDescription="@string/content_twitter"
-        android:onClick="openTwitter"
+        android:onClick="onClick"
         android:src="@drawable/twitter" />
 
     <ImageView
@@ -119,7 +125,7 @@
         style="@style/BottomIconStylePortrait"
         android:layout_centerHorizontal="true"
         android:contentDescription="@string/content_linkedin"
-        android:onClick="openLinkedIn"
+        android:onClick="onClick"
         android:src="@drawable/linkedin" />
 
     <ImageView
@@ -128,7 +134,7 @@
         android:layout_toEndOf="@id/linkedin_icon"
         android:layout_toRightOf="@id/linkedin_icon"
         android:contentDescription="@string/content_instagram"
-        android:onClick="openInstagram"
+        android:onClick="onClick"
         android:src="@drawable/instagram" />
 
     <ImageView
@@ -137,7 +143,7 @@
         android:layout_toEndOf="@id/instagram_icon"
         android:layout_toRightOf="@id/instagram_icon"
         android:contentDescription="@string/content_google"
-        android:onClick="openGoogle"
+        android:onClick="onClick"
         android:src="@drawable/google" />
 
 </RelativeLayout>

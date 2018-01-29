@@ -23,86 +23,87 @@ public class MainActivity extends AppCompatActivity {
         }
 
         setContentView(R.layout.activity_main);
+
     }
 
-    // Open map at the company's geolocation
-    public void openMap(View view) {
-        Intent mapIntent = new Intent(Intent.ACTION_VIEW);
-        mapIntent.setData(Uri.parse("geo:0,0?q=" + getString(R.string.company_lat) + "," + getString(R.string.company_long) + "(" + getString(R.string.company_name) + ")"));
-        if (mapIntent.resolveActivity(getPackageManager()) != null) {
-            startActivity(mapIntent);
-        }
-    }
-
-    // Open dialer with the company's phone no
-    public void openDialer(View view) {
-        Intent intent = new Intent(Intent.ACTION_DIAL);
-        intent.setData(Uri.parse("tel:" + getString(R.string.company_telephone)));
-        if (intent.resolveActivity(getPackageManager()) != null) {
-            startActivity(intent);
-        }
-    }
-
-    // Open the company's website in the browser
-    public void openBrowser(View view) {
-        Uri webpage = Uri.parse("http://" + getString(R.string.company_web));
-        Intent intent = new Intent(Intent.ACTION_VIEW, webpage);
-        if (intent.resolveActivity(getPackageManager()) != null) {
-            startActivity(intent);
-        }
-    }
-
-    // Open the mail app with the company's e-mail address as a recipient
-    public void openMail(View view) {
-        Intent mailIntent = new Intent(Intent.ACTION_SENDTO);
-        mailIntent.setData(Uri.parse("mailto:" + getString(R.string.company_email))); // only email apps should handle this
-        if (mailIntent.resolveActivity(getPackageManager()) != null) {
-            startActivity(mailIntent);
-        }
-    }
-
-    // Open the company's Facebook page in the browser
-    public void openFacebook(View view) {
-        Uri webpage = Uri.parse(getString(R.string.company_facebook));
-        Intent intent = new Intent(Intent.ACTION_VIEW, webpage);
-        if (intent.resolveActivity(getPackageManager()) != null) {
-            startActivity(intent);
-        }
-    }
-
-    // Open the company's Twitter page in the browser
-    public void openTwitter(View view) {
-        Uri webpage = Uri.parse(getString(R.string.company_twitter));
-        Intent intent = new Intent(Intent.ACTION_VIEW, webpage);
-        if (intent.resolveActivity(getPackageManager()) != null) {
-            startActivity(intent);
-        }
-    }
-
-    // Open the company's LinkedIn page in the browser
-    public void openLinkedIn(View view) {
-        Uri webpage = Uri.parse(getString(R.string.company_linkedin));
-        Intent intent = new Intent(Intent.ACTION_VIEW, webpage);
-        if (intent.resolveActivity(getPackageManager()) != null) {
-            startActivity(intent);
-        }
-    }
-
-    // Open the company's Instagram page in the browser
-    public void openInstagram(View view) {
-        Uri webpage = Uri.parse(getString(R.string.company_instagram));
-        Intent intent = new Intent(Intent.ACTION_VIEW, webpage);
-        if (intent.resolveActivity(getPackageManager()) != null) {
-            startActivity(intent);
-        }
-    }
-
-    // Open the company's Google+ page in the browser
-    public void openGoogle(View view) {
-        Uri webpage = Uri.parse(getString(R.string.company_google));
-        Intent intent = new Intent(Intent.ACTION_VIEW, webpage);
-        if (intent.resolveActivity(getPackageManager()) != null) {
-            startActivity(intent);
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.map_icon:
+            case R.id.company_address:
+                // Open map at the company's geolocation
+                Intent mapIntent = new Intent(Intent.ACTION_VIEW);
+                mapIntent.setData(Uri.parse("geo:0,0?q=" + getString(R.string.company_lat) + "," + getString(R.string.company_long) + "(" + getString(R.string.company_name) + ")"));
+                if (mapIntent.resolveActivity(getPackageManager()) != null) {
+                    startActivity(mapIntent);
+                }
+                break;
+            case R.id.phone_icon:
+            case R.id.company_phone:
+                // Open dialer with the company's phone no
+                Intent intent = new Intent(Intent.ACTION_DIAL);
+                intent.setData(Uri.parse("tel:" + getString(R.string.company_telephone)));
+                if (intent.resolveActivity(getPackageManager()) != null) {
+                    startActivity(intent);
+                }
+                break;
+            case R.id.web_icon:
+            case R.id.company_web:
+                // Open the company's website in the browser
+                Uri webpage = Uri.parse("http://" + getString(R.string.company_web));
+                Intent intentW = new Intent(Intent.ACTION_VIEW, webpage);
+                if (intentW.resolveActivity(getPackageManager()) != null) {
+                    startActivity(intentW);
+                }
+                break;
+            case R.id.mail_icon:
+            case R.id.company_email:
+                // Open the mail app with the company's e-mail address as a recipient
+                Intent mailIntent = new Intent(Intent.ACTION_SENDTO);
+                mailIntent.setData(Uri.parse("mailto:" + getString(R.string.company_email))); // only email apps should handle this
+                if (mailIntent.resolveActivity(getPackageManager()) != null) {
+                    startActivity(mailIntent);
+                }
+                break;
+            case R.id.facebook_icon:
+                // Open the company's Facebook page in the browser
+                Uri webpageF = Uri.parse(getString(R.string.company_facebook));
+                Intent intentF = new Intent(Intent.ACTION_VIEW, webpageF);
+                if (intentF.resolveActivity(getPackageManager()) != null) {
+                    startActivity(intentF);
+                }
+                break;
+            case R.id.twitter_icon:
+                // Open the company's Twitter page in the browser
+                Uri webpageT = Uri.parse(getString(R.string.company_twitter));
+                Intent intentT = new Intent(Intent.ACTION_VIEW, webpageT);
+                if (intentT.resolveActivity(getPackageManager()) != null) {
+                    startActivity(intentT);
+                }
+                break;
+            case R.id.linkedin_icon:
+                // Open the company's LinkedIn page in the browser
+                Uri webpageL = Uri.parse(getString(R.string.company_linkedin));
+                Intent intentL = new Intent(Intent.ACTION_VIEW, webpageL);
+                if (intentL.resolveActivity(getPackageManager()) != null) {
+                    startActivity(intentL);
+                }
+                break;
+            case R.id.instagram_icon:
+                // Open the company's Instagram page in the browser
+                Uri webpageI = Uri.parse(getString(R.string.company_instagram));
+                Intent intentI = new Intent(Intent.ACTION_VIEW, webpageI);
+                if (intentI.resolveActivity(getPackageManager()) != null) {
+                    startActivity(intentI);
+                }
+                break;
+            case R.id.google_icon:
+                // Open the company's Google+ page in the browser
+                Uri webpageG = Uri.parse(getString(R.string.company_google));
+                Intent intentG = new Intent(Intent.ACTION_VIEW, webpageG);
+                if (intentG.resolveActivity(getPackageManager()) != null) {
+                    startActivity(intentG);
+                }
+                break;
         }
     }
 }
